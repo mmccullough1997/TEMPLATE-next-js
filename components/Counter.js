@@ -15,8 +15,13 @@ const Counter = ({ counterTitle }) => {
       <button type="button" onClick={() => setValue(value - 1)}>Don&apos;t Free Him! I hate him!</button>
       <button type="button" onClick={() => setValue(0)}>Reset(I dont care)</button> */}
       {/* wait until value updates, then adds one when it does -------------------> BETTER WAY BELOW */}
-      <button type="button" onClick={handleClick}>Free Him!</button>
-      <button type="button" onClick={() => setValue((prevState) => prevState - 1)}>Don&apos;t Free Him! I hate him!</button>
+      <button
+        type="button"
+        onClick={handleClick}
+      >
+        Free Him!
+      </button>
+      <button type="button" disabled={value === 0} onClick={() => setValue((prevState) => prevState - 1)}>Don&apos;t Free Him! I hate him!</button>
       <button type="button" onClick={() => setValue(0)}>Reset(I dont care)</button>
     </>
   );
